@@ -129,13 +129,13 @@ DADOS DO SOLICITANTE
     };
 
     await emailjs
-      .send(
-        "service_mehokpp",
-        "template_asiyjs8",
-        templateParams,
-        `${process.env.NEXT_PUBLIC_KEY_EMAIL}`
-      )
-      .then(
+       .send(
+         "service_mehokpp",
+         "template_asiyjs8",
+         templateParams,
+         `${process.env.NEXT_PUBLIC_KEY_EMAIL}`
+       )
+       .then(
         () => {
           setIsDisabled(false);
         },
@@ -144,6 +144,7 @@ DADOS DO SOLICITANTE
 
     // Redirect user to Whatsapp
     window.open(`https://wa.me/5511979588987?text=${textEncoded}`, "_blank");
+    window.location.href = "/";
   };
 
   return (
@@ -152,7 +153,7 @@ DADOS DO SOLICITANTE
       <span className="text-gray-500 max-w-[350px] md:max-w-[484px] text-center">
         Ao clicar em Enviar, sua resposta será enviada para o nosso email e você
         será redirecionado para o Whatsapp com todas as informações preenchidas.
-        Desta forma, o seu atendimento será mais rápido :)
+        Desta forma o seu atendimento ficará mais rápido :)
       </span>
       <div className="flex gap-2 w-full px-3 md:px-8 items-center  justify-center md:justify-between">
         <button
