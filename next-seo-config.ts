@@ -1,6 +1,6 @@
-const title = "Nettrakcer - Soluções em tecnologia";
+const title = "Nettracker - Soluções em Tecnologia";
 const description =
-  "Empresa qualificadada em instalação de rastreadores, vendas e remanufatura";
+  "Fundada em 2016, a Nettracker surgiu através da visão de compreender as reais necessidades do mercado de segurança veicular com o uso dos rastreadores e eletrônicos.";
 
 export const SEO = {
   title,

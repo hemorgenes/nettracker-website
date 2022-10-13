@@ -43,7 +43,7 @@ const Home = () => {
     <Page
       path="/"
       title="Nettracker - Soluções em tecnologia"
-      description="Empresa qualificadada em instalação de rastreadores, vendas e remanufatura"
+      description="Fundada em 2016, a Nettracker surgiu através da visão de compreender as reais necessidades do mercado de segurança veicular com o uso dos rastreadores e eletrônicos."
     >
       <Header />
       <main className="my-main-top-0">
