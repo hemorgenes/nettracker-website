@@ -5,19 +5,19 @@ const description =
 export const SEO = {
   title,
   description,
-  canonical: "https://nettracker-website-19o6-oegfb285z-hemorgenes.vercel.app",
+  canonical: "https://nettracker.com.br",
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://nettracker-website-19o6-oegfb285z-hemorgenes.vercel.app",
+    url: "https://nettracker.com.br",
     title,
     description,
     images: [
       {
-        url: "https://nettracker-website-19o6-oegfb285z-hemorgenes.vercel.app/pt-BR/public/background.webp",
+        url: "/thumb.png",
         alt: title,
         width: 1200,
-        height: 720,
+        height: 630,
       },
     ],
   },
