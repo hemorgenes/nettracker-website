@@ -143,7 +143,7 @@ DADOS DO SOLICITANTE
       );
 
     // Redirect user to Whatsapp
-    window.open(`https://wa.me/5511979588987?text=${textEncoded}`, "_blank");
+    window.open(`https://wa.me/5511986938805?text=${textEncoded}`, "_blank");
     window.location.href = "/";
   };
 
