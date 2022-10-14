@@ -101,7 +101,8 @@ function StepTwo() {
 
   // FUNCTION TO GET THE MODELS FROM VEHICLE BRAND
   const getModels = async (codBrand: string) => {
-    if (brandVehicle == undefined) {
+    console.log("novo cod:", codBrand)
+    if (brandVehicle == undefined || brandVehicle.codigo !== codBrand) {
       const [{ nome }] = brands.filter((item) => item.codigo == codBrand);
       setBrandVehicle({ codigo: codBrand, nome: nome });
     }
@@ -199,7 +200,7 @@ function StepTwo() {
             <span className="text-gray-600">Marca do veículo</span>
             {/* MARCA */}
             <select
-              disabled={vehicleType == undefined}
+              disabled={vehicleType == undefined || vehicles.length == 0}
               required
               value={brandVehicle?.codigo}
               onChange={(e) => {
@@ -226,7 +227,7 @@ function StepTwo() {
             {/* MODELO */}
             <select
               className="bg-gray-100 transition-all focus:bg-gray-200 hover:bg-gray-200 px-4 py-2 rounded-sm outline-none"
-              disabled={brandVehicle == undefined}
+              disabled={brandVehicle == undefined || brands.length == 0}
               required
               value={modelVehicle}
               onChange={(e) => setModelVehicle(e.target.value)}

@@ -105,7 +105,7 @@ export default function Header() {
                 Agendamento
               </li>
             </LinkNext>
-            <LinkNext href="https://rastreame.com.br/">
+            <LinkNext href="https://rastreame.com.br/#/nettracker">
               <a target="_blank">
                 <li
                   className={`py-2 px-3 rounded hover:bg-opacity-90 ${
@@ -210,7 +210,7 @@ export default function Header() {
                     Agendamento
                   </li>
                 </LinkNext>
-                <LinkNext href="https://rastreame.com.br/">
+                <LinkNext href="https://rastreame.com.br/#/nettracker">
                   <a target="_blank">
                     <li className="py-4 px-8 w-full rounded text-left">
                       Login
