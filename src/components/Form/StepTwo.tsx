@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Scroll from "react-scroll";
 import { useFormContact } from "../../contexts/DataFormContactContext";
 import { usePercentProgressBar } from "../../contexts/StepProgressBarContext";
-import { Brand, Model, State } from "../../types/FormContact";
+import { Brand, DataRecived, Model, State } from "../../types/FormContact";
 import {
   brandCarts,
   colors,
@@ -70,38 +70,36 @@ function StepTwo() {
     (state) => state.setProblemCustomer
   );
 
-  let numberCustomerVar: string;
-  let lengthNumber;
+  let numberWithMask: string;
+  let lengthNumber: number;
+  //const [numberWithMask, setNumberWithMask] = useState("");
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data: any) => {
-    setVehiclePlate(data.vehiclePlate);
-    setColorVehicle(data.colorVehicle);
-    setNameCustomer(data.nameCustomer);
-    setNumberCustomer(numberCustomerVar);
-    setEmailCustomer(data.emailCustomer);
-    setProblemCustomer(data.problemCustomer);
+    const dataForm: DataRecived = data;
+    setVehiclePlate(dataForm.vehiclePlate.toUpperCase());
+    setColorVehicle(dataForm.colorVehicle);
+    setNameCustomer(dataForm.nameCustomer);
+    setNumberCustomer(numberWithMask);
+    setEmailCustomer(dataForm.emailCustomer.toLowerCase());
+    setProblemCustomer(dataForm.problemCustomer);
     Scroll.animateScroll.scrollToTop({ duration: 0 });
-    console.log(data);
     setPercent(100);
   };
 
   //FUNCTION INCREMENT PROGRESS BAR STATUS
   const setPercent = usePercentProgressBar((state) => state.setPersent);
 
-  // FUNCTION TO GET THE BRANDS FROM VEHICLE TYPE
   const getBrands = async (vehicleTypeProp: string) => {
     const response = await fetch(
       `https://parallelum.com.br/fipe/api/v1/${vehicleTypeProp}/marcas`
     );
-    const data = await response.json();
-    setBrands(data);
+    const brands = await response.json();
+    setBrands(brands);
   };
 
-  // FUNCTION TO GET THE MODELS FROM VEHICLE BRAND
   const getModels = async (codBrand: string) => {
-    console.log("novo cod:", codBrand)
     if (brandVehicle == undefined || brandVehicle.codigo !== codBrand) {
       const [{ nome }] = brands.filter((item) => item.codigo == codBrand);
       setBrandVehicle({ codigo: codBrand, nome: nome });
@@ -113,6 +111,28 @@ function StepTwo() {
     const data = await response.json();
 
     setModels(data.modelos);
+  };
+
+  const addMaskToNumber = (e: any) => {
+    if (lengthNumber > e.target.value.length) {
+      lengthNumber = e.target.value.length;
+      return;
+    } else {
+      if (e.target.value.length == 1) {
+        e.target.value = "(" + e.target.value;
+      }
+      if (e.target.value.length == 3) {
+        e.target.value = e.target.value + ")";
+      }
+      if (e.target.value.length == 4) {
+        e.target.value = e.target.value + " ";
+      }
+      if (e.target.value.length == 10) {
+        e.target.value = e.target.value + "-";
+      }
+      lengthNumber = e.target.value.length;
+    }
+    numberWithMask = e.target.value;
   };
 
   useEffect(() => {
@@ -144,7 +164,7 @@ function StepTwo() {
     getModelsWhenToBackPage();
   }, []);
 
-  //FUNCTION TO ADD YEARS BETWEEN 1970 AND CURRENT DATE
+  //FUNCTION TO ADD YEARS BETWEEN 1970 AND CURRENT YEAR
   handleIncrementYearArray();
 
   return (
@@ -429,26 +449,7 @@ function StepTwo() {
               maxLength={15}
               pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
               onChange={(e) => {
-                // MASK NUMBER (11) 03928-3291
-                if (lengthNumber > e.target.value.length) {
-                  lengthNumber = e.target.value.length;
-                  return;
-                } else {
-                  if (e.target.value.length == 1) {
-                    e.target.value = "(" + e.target.value;
-                  }
-                  if (e.target.value.length == 3) {
-                    e.target.value = e.target.value + ")";
-                  }
-                  if (e.target.value.length == 4) {
-                    e.target.value = e.target.value + " ";
-                  }
-                  if (e.target.value.length == 10) {
-                    e.target.value = e.target.value + "-";
-                  }
-                  lengthNumber = e.target.value.length;
-                }
-                numberCustomerVar = e.target.value;
+                addMaskToNumber(e);
               }}
             />
           </section>
@@ -505,6 +506,3 @@ function StepTwo() {
 }
 
 export default StepTwo;
-
-// ENTRAR EM CONTATO COM API SE AINDA ESTIVER DANDO ERRO
-// MIGRAR OS PRÓXIMOS ESTADOS PARA OS SELECT

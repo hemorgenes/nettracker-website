@@ -37,6 +37,14 @@ export type Color =
   | "Marrom"
   | "Outros";
 
+export type DataRecived = {
+  vehiclePlate: string;
+  colorVehicle: string;
+  nameCustomer: string;
+  emailCustomer: string;
+  problemCustomer: string;
+};
+
 export type DataContact = {
   date: string;
   setDate: (date: string) => void;

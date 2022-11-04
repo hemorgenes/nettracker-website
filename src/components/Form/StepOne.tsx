@@ -6,22 +6,7 @@ import { usePercentProgressBar } from "../../contexts/StepProgressBarContext";
 import { State, Technology } from "../../types/FormContact";
 
 function StepOne() {
-  const setPercent = usePercentProgressBar((state) => state.setPersent);
-  const [states, setStates] = useState<State[]>([]);
-
-  //Call API IBGE
-  useEffect(() => {
-    const getUfs = async () => {
-      const response = await fetch(
-        "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
-      );
-      const data = await response.json();
-      setStates(data);
-    };
-    getUfs();
-  }, []);
-
-  //Array options Technology
+  
   const technologyArray: Technology[] = [
     { name: "Autotrac" },
     { name: "Omnilink" },
@@ -29,6 +14,9 @@ function StepOne() {
     { name: "Outros" },
     { name: "Nettracker" },
   ];
+  
+  const [states, setStates] = useState<State[]>([]);
+  const setPercent = usePercentProgressBar((state) => state.setPersent);
 
   const date = useFormContact((state) => state.date);
   const setDate = useFormContact((state) => state.setDate);
@@ -55,6 +43,18 @@ function StepOne() {
 
   const escortInLocal = useFormContact((state) => state.escortInLocal);
   const setEscortInLocal = useFormContact((state) => state.setEscortInLocal);
+
+    //Call API IBGE
+    useEffect(() => {
+      const getUfs = async () => {
+        const response = await fetch(
+          "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
+        );
+        const states = await response.json();
+        setStates(states);
+      };
+      getUfs();
+    }, []);
 
   return (
     <form
