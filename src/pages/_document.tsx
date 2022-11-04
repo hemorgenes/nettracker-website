@@ -11,6 +11,10 @@ export default function Document() {
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.nettracker.com.br/" />
         <meta
+          name="description"
+          content="Fundada em 2016, a Nettracker surgiu através da visão de compreender as reais necessidades do mercado de segurança veicular com o uso dos rastreadores e eletrônicos."
+        />
+        <meta
           property="twitter:title"
           content="Nettracker - Soluções em tecnologia"
         />
