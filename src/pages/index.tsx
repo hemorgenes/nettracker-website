@@ -20,7 +20,6 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 //Data
 import { testimonial } from "../utils/dataDepositions";
 
-
 //Components
 import Header from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -97,7 +96,7 @@ const Home = () => {
           </div>
 
           <Image
-            className="my-shadow order-first md:order-last"
+            className="image-portal order-first md:order-last"
             width={607}
             height={400}
             src="/desktop-and-mobile.webp"
@@ -106,7 +105,7 @@ const Home = () => {
         </section>
 
         {/* ABOUT US */}
-        <section className="my-image-about flex justify-between 2xl:justify-center 2xl:bg-transparent items-center w-full flex-col lg:flex-row bg-gray-100">
+        <section className="image-about-us flex justify-between 2xl:justify-center 2xl:bg-transparent items-center w-full flex-col lg:flex-row bg-white">
           <Image
             placeholder="blur"
             blurDataURL="/nettracker-aboutus.webp"
@@ -121,7 +120,7 @@ const Home = () => {
             <h2 className="text-2xl text-zinc-800 font-semibold mb-2 mt-4">
               Sobre nós
             </h2>
-            <span className="block text-[15px] md:text-base text-gray-500 font-regular text-left">
+            <span className="block text-[15px] md:text-base text-gray-700 font-regular text-left">
               A Nettracker surgiu através da visão de compreender as reais
               necessidades do mercado de segurança veicular com o uso dos
               rastreadores e eletrônicos. Baseado nos principais requisitos para
@@ -142,7 +141,7 @@ const Home = () => {
               Soluções inteligentes
             </h2>
             <span className="block text-gray-500 font-regular text-[15px] md:text-base">
-              Melhor performace para seu negócio
+              Melhor performance para seu negócio
             </span>
           </div>
 
@@ -150,7 +149,7 @@ const Home = () => {
             title={"Serviços prestados"}
             image="/servicos.webp"
             description={
-              "Trabalhamos com a Manutenção, instalação, desinstalação de rastreadores..."
+              "Trabalhamos com a manutenção, instalação e desinstalação de rastreadores..."
             }
           >
             <ModalServicesMemo />
@@ -161,7 +160,7 @@ const Home = () => {
             title={"Venda de peças"}
             image="/vendas.webp"
             description={
-              "Fornecemos ao nossos clientes vendas de peças, insumos, travas, chicotes, engates, desengates e etc."
+              "Fornecemos aos nossos clientes vendas de peças como insumos, travas, chicotes, engates, desengates e etc."
             }
           >
             <ModalSalesMemo />
@@ -173,7 +172,7 @@ const Home = () => {
             title={"Remanufatura"}
             image="/remanufatura.webp"
             description={
-              "Fazemos a remanufatura de travas, modulos, antenas, bloqueios e etc."
+              "Fazemos a remanufatura de travas, módulos, antenas, bloqueios e etc."
             }
           >
             <ModalRemanufacturingMemo />
@@ -193,7 +192,7 @@ const Home = () => {
             alt="Patrocinios"
             objectFit="cover"
           />
-          <span className="my-sponsors-text z-10 block w-[90%] md:w-[60%] lg:w-[40%] absolute -bottom-[17%] md:-bottom-[13%] lg:-bottom-[6.5%] px-12 py-4 md:py-8">
+          <span className="sponsors-text-container z-10 block w-[90%] md:w-[60%] lg:w-[40%] absolute -bottom-[17%] md:-bottom-[13%] lg:-bottom-[6.5%] px-12 py-4 md:py-8">
             Nettracker - Patrocinador Official da LUSA Fut7
           </span>
         </section>
@@ -212,11 +211,11 @@ const Home = () => {
               Depoimentos
             </h2>
             <span className="block text-gray-500 font-regular mx-8">
-              Veja o que os clientes estão falando de nós
+              Veja o que as empresas estão falando da Nettracker
             </span>
           </div>
 
-          <div className="my-background-depositions py-16 md:py-20 px-4">
+          <div className="linear-gradient-background-2 py-16 md:py-20 px-4">
             <CarouselNuka
               slidesToShow={screen.width < 768 ? 1 : 3}
               className="my-carousel w-[100%]"
@@ -227,14 +226,14 @@ const Home = () => {
                   className="my-slide-depositions min-h-[250px]  bg-white relative rounded-sm p-8 mx-4"
                 >
                   <div className="flex flex-col">
-                    <span className="text-base mb-3 font-semibold text-zinc-700 my-text-name-depositions">
+                    <span className="text-base mb-3 font-semibold text-zinc-700 depositions-line-height">
                       {item.name}
                     </span>
                     <span className="text-sm font-light text-gray-500">
                       {item.office}
                     </span>
                   </div>
-                  <div className="flex items-center gap-1 mb-6 mt-2 my-text-name-depositions">
+                  <div className="flex items-center gap-1 mb-6 mt-2 depositions-line-height">
                     {item.stars.map((star) =>
                       star.isStarFill ? (
                         <AiFillStar key={star.id} color="#ffc400" size={16} />
@@ -249,7 +248,7 @@ const Home = () => {
                   </div>
 
                   <span className="text-gray-600">
-                    <RiDoubleQuotesR size={24} id="my-icon-quotes" />
+                    <RiDoubleQuotesR size={24} className="icon-quotes" />
                     {item.deposition}
                   </span>
                 </div>
@@ -266,7 +265,7 @@ const Home = () => {
             </h2>
             <span className="block text-[15px] mx-2 md:text-base text-gray-500 font-light max-w-[500px] px-4">
               Além de termos diversas empresas espalhadas pelo Brasil, temos
-              nossa sede em São Paulo
+              nossa sede em São Paulo - SP
             </span>
           </div>
           <iframe
@@ -280,7 +279,7 @@ const Home = () => {
           ></iframe>
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </Page>
   );
 };

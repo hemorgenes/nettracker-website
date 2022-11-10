@@ -16,7 +16,7 @@ function ModalServices() {
       <Modal
         animated={true}
         scroll
-        className="cursor-default"
+        className="cursor-default all-portals"
         width="700px"
         aria-labelledby="modal-title"
         aria-describedby="modal-description"

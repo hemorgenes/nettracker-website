@@ -16,7 +16,7 @@ function ModalSales() {
       <Modal
         scroll
         animated={true}
-        className="cursor-default"
+        className="cursor-default all-portals"
         width="700px"
         aria-labelledby="modal-title"
         aria-describedby="modal-description"

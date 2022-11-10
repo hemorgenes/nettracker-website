@@ -15,7 +15,7 @@ function ModalRemanufacturing() {
       </button>
       <Modal
         scroll
-        className="cursor-default"
+        className="cursor-default all-portals"
         animated={true}
         width="700px"
         aria-labelledby="modal-title"

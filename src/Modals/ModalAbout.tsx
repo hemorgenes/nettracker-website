@@ -43,7 +43,7 @@ function ModalAbout() {
           </div>
         </Modal.Header>
         <Modal.Body>
-          <h2 className="font-semibold text-lg text-zinc-700 my-title-modal">
+          <h2 className="font-semibold text-lg text-zinc-700 about-us-title-modal">
             Nossa história
           </h2>
           <span className="text-gray-700">
@@ -56,7 +56,7 @@ function ModalAbout() {
             companhia com o melhor atendimento, os melhores serviços e peças que
             poderia ofertar.
           </span>
-          <h2 className="font-semibold text-lg text-zinc-700 my-title-modal">
+          <h2 className="font-semibold text-lg text-zinc-700 about-us-title-modal">
             Empresa
           </h2>
           <span className="text-gray-700">
@@ -74,14 +74,14 @@ function ModalAbout() {
             principalmente, a prática mais segura para viabilizar os custos de
             segurança para as suas frotas e transportadora.
           </span>
-          <h2 className="font-semibold text-lg text-zinc-700 my-title-modal">
+          <h2 className="font-semibold text-lg text-zinc-700 about-us-title-modal">
             Missão
           </h2>
           <span className="text-gray-700">
             Tornar as operações logísticas mais eficientes e seguras com o
             rastreamento veicular.
           </span>
-          <h2 className="font-semibold text-lg text-zinc-700 my-title-modal">
+          <h2 className="font-semibold text-lg text-zinc-700 about-us-title-modal">
             Visão
           </h2>
           <span className="text-gray-700">

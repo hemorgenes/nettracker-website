@@ -17,21 +17,17 @@ function ModalPortal() {
       <Modal
         scroll
         animated={true}
-        className="cursor-default"
+        id="modal-portal"
+        className="cursor-default my-background-modal-portal"
         width="700px"
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
         {...bindings}
       >
-        <Modal.Header>
-          <h1 className="text-xl font-bold pt-2 text-zinc-700">
-            Confira já nosso portal e nosso aplicativo!
-          </h1>
-        </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="my-background-modal-portal">
           <iframe
             width="100%"
-            className="mx-auto my-frame"
+            className="mx-auto modal-video-youtube"
             height="315"
             src="https://www.youtube.com/embed/9jCBcIlxjy8"
             title="Nettracker video"

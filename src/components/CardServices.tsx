@@ -28,7 +28,7 @@ export function CardLeft({
           alt={title}
           objectFit="cover"
         />
-        <div className="absolute -bottom-9 -left-9 my-square-bakground w-full h-full"></div>
+        <div className="absolute -bottom-9 -left-9 linear-gradient-background w-full h-full"></div>
       </div>
 
       <div className="max-w-[500px] mt-24 px-8 text-center md:mt-0 md:px-0 md:text-left">
@@ -61,7 +61,7 @@ export function CardRight({ title, description, image, children }: CardProps) {
           alt={title}
           objectFit="cover"
         />
-        <div className=" absolute -bottom-9 -left-9 my-square-bakground w-[100%] h-full"></div>
+        <div className=" absolute -bottom-9 -left-9 linear-gradient-background w-[100%] h-full"></div>
       </div>
     </article>
   );

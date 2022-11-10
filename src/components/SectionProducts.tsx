@@ -4,11 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { BsWhatsapp } from "react-icons/bs";
 import { useResponsive } from "../contexts/ResponsiveContext";
-
-type Product = {
-  title: string;
-  urlImage: string;
-};
+import { products } from "../utils/dataProducts";
 
 export function SectionProducts() {
   const setScreen = useResponsive((state) => state.setScreen);
@@ -20,43 +16,8 @@ export function SectionProducts() {
     }
   }, []);
 
-  const products: Product[] = [
-    {
-      title: "Cabo de teclado - Rastreador",
-      urlImage: "/carousel/cabo-de-teclado.webp",
-    },
-    {
-      title: "Chicóte módulo rastreador",
-      urlImage: "/carousel/chicote-modulo-rastreador.webp",
-    },
-    {
-      title: "Sensor anti vandalismo",
-      urlImage: "/carousel/sensor-anti-vandalismo.webp",
-    },
-    {
-      title: "Sensor porta baú",
-      urlImage: "/carousel/sensor-porta-bau.webp",
-    },
-    {
-      title: "Sensor porta baú (Embutido)",
-      urlImage: "/carousel/sensor-porta-bau-embutido.webp",
-    },
-    {
-      title: "Trava de baú",
-      urlImage: "/carousel/trava-de-bau.webp",
-    },
-    {
-      title: "Sensor de carona(Porta)",
-      urlImage: "/carousel/sensor-carona.webp",
-    },
-    {
-      title: "Tinada de ebgate (Paralela)",
-      urlImage: "/carousel/tomada-engate.webp",
-    },
-  ];
-
   return (
-    <section className=" my-background-products w-full text-center py-8">
+    <section className="linear-gradient-background-2 w-full text-center py-8">
       <div className="text-center mb-8">
         <h2 className="text-2xl font-semibold mb-1 text-white">
           Nossos produtos
@@ -67,13 +28,9 @@ export function SectionProducts() {
       </div>
       <CarouselNuka slidesToShow={screen.width < 768 ? 1 : 3}>
         {products.map((item, index) => (
-          <div
-            key={index}
-            className="my-background-itemCarousel mx-8 md:mx-4 text-center"
-          >
+          <div key={index} className="products-item mx-8 md:mx-4 text-center">
             <div className="relative w-[200px] h-[200px] overflow-visible">
               <Image
-                className="my-image-itemCarousel"
                 objectFit="cover"
                 width={200}
                 height={200}
