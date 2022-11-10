@@ -62,7 +62,7 @@ function FooterComponent() {
         <hr className="rounded-full bg-gray-500 w-1 h-1" />
         <Link
           href="/"
-          to="my-background-products"
+          to="products-scroll"
           smooth={true}
           offset={-70}
           duration={500}

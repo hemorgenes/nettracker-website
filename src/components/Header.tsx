@@ -63,7 +63,7 @@ export default function Header() {
             {/* ABOUT US */}
             <Link
               href="/"
-              to="my-image-about"
+              to="image-about-scroll"
               offset={-70}
               smooth={true}
               duration={500}
@@ -89,7 +89,7 @@ export default function Header() {
             {/* PRODUCTS */}
             <Link
               href="/"
-              to="my-background-products"
+              to="products-scroll"
               smooth={true}
               offset={-70}
               duration={500}
@@ -153,7 +153,7 @@ export default function Header() {
                 {/* ABOUT US */}
                 <Link
                   href="/"
-                  to="my-image-about"
+                  to="image-about-scroll"
                   offset={-70}
                   smooth={true}
                   duration={500}
@@ -190,7 +190,7 @@ export default function Header() {
 
                 <Link
                   href="/"
-                  to="my-background-products"
+                  to="products-scroll"
                   smooth={true}
                   offset={-70}
                   duration={500}

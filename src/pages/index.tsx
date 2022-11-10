@@ -110,6 +110,7 @@ const Home = () => {
             placeholder="blur"
             blurDataURL="/nettracker-aboutus.webp"
             src="/nettracker-aboutus.webp"
+            className="image-about-scroll"
             width={660}
             height={360}
             objectFit="cover"

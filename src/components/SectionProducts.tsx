@@ -17,7 +17,7 @@ export function SectionProducts() {
   }, []);
 
   return (
-    <section className="linear-gradient-background-2 w-full text-center py-8">
+    <section className="linear-gradient-background-2 products-scroll w-full text-center py-8">
       <div className="text-center mb-8">
         <h2 className="text-2xl font-semibold mb-1 text-white">
           Nossos produtos
