@@ -188,13 +188,13 @@ const Home = () => {
         {/* SPONSORS */}
         <section className="w-full h-[200px] md:h-[300px] lg:h-[400px] relative mt-16   flex flex-col items-center text-center text-white mb-16">
           <Image
-            src="/patrocinadores.webp"
+            src="/banner.webp"
             layout="fill"
             alt="Patrocinios"
             objectFit="cover"
           />
-          <span className="sponsors-text-container z-10 block w-[90%] md:w-[60%] lg:w-[40%] absolute -bottom-[17%] md:-bottom-[13%] lg:-bottom-[6.5%] px-12 py-4 md:py-8">
-            Nettracker - Patrocinador Official da LUSA Fut7
+          <span className="sponsors-text-container font-semibold z-10 block w-[90%] md:w-[60%] lg:w-[40%] absolute -bottom-[17%] md:-bottom-[13%] lg:-bottom-[6.5%] px-12 py-4 md:py-8">
+            VENHA CONHECER A NETTRACKER
           </span>
         </section>
 
