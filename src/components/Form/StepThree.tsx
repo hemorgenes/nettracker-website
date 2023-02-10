@@ -129,13 +129,13 @@ DADOS DO SOLICITANTE
     };
 
     await emailjs
-       .send(
-         "service_mehokpp",
-         "template_asiyjs8",
-         templateParams,
-         `${process.env.NEXT_PUBLIC_KEY_EMAIL}`
-       )
-       .then(
+      .send(
+        "service_mehokpp",
+        "template_asiyjs8",
+        templateParams,
+        `${process.env.NEXT_PUBLIC_KEY_EMAIL}`
+      )
+      .then(
         () => {
           setIsDisabled(false);
         },
@@ -143,8 +143,8 @@ DADOS DO SOLICITANTE
       );
 
     // Redirect user to Whatsapp
-    window.open(`https://wa.me/5511986938805?text=${textEncoded}`, "_blank");
-    window.location.href = "/";
+    //window.open(`https://wa.me/5511986938805?text=${textEncoded}`, "_blank");
+    window.location.href = `https://wa.me/5511986938805?text=${textEncoded}`;
   };
 
   return (
