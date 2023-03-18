@@ -1,3 +1,11 @@
+//Components
+import Header from "../components/Header";
+import { useResponsive } from "../contexts/ResponsiveContext";
+import { CardLeft, CardRight } from "../components/CardServices";
+import { SectionProducts } from "../components/SectionProducts";
+import { SectionCustomersMemo } from "../components/SectionCustomers";
+import { Footer } from "../components/Footer";
+
 // React Funcitons and Next utilites
 import { useEffect } from "react";
 import Image from "next/image";
@@ -19,14 +27,10 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 //Data
 import { testimonial } from "../utils/dataDepositions";
-
-//Components
-import Header from "../components/Header";
-import { Footer } from "../components/Footer";
-import { CardLeft, CardRight } from "../components/CardServices";
-import { SectionProducts } from "../components/SectionProducts";
-import { SectionCustomersMemo } from "../components/SectionCustomers";
-import { useResponsive } from "../contexts/ResponsiveContext";
+import {
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from "react-icons/bs";
 
 const Home = () => {
   const setScreen = useResponsive((state) => state.setScreen);
@@ -37,6 +41,22 @@ const Home = () => {
       setScreen({ width: window.innerWidth, height: window.innerHeight });
     }
   }, []);
+
+  function CustomPrevButton(props) {
+    return (
+      <button className="ml-3" onClick={props.previousSlide}>
+        <BsFillArrowLeftCircleFill size={32} />
+      </button>
+    );
+  }
+
+  function CustomNextButton(props) {
+    return (
+      <button className="mr-3" onClick={props.nextSlide}>
+        <BsFillArrowRightCircleFill size={32} />
+      </button>
+    );
+  }
 
   return (
     <Page
@@ -186,16 +206,63 @@ const Home = () => {
         <hr className="h-[2px] w-full bg-gray-200 md:hidden mb-16" />
 
         {/* SPONSORS */}
-        <section className="w-full h-[200px] md:h-[300px] lg:h-[400px] relative mt-16   flex flex-col items-center text-center text-white mb-16">
-          <Image
-            src="/banner.webp"
-            layout="fill"
-            alt="Patrocinios"
-            objectFit="cover"
-          />
-          <span className="sponsors-text-container font-semibold z-10 block w-[90%] md:w-[60%] lg:w-[40%] absolute -bottom-[17%] md:-bottom-[13%] lg:-bottom-[6.5%] px-12 py-4 md:py-8">
-            VENHA CONHECER A NETTRACKER
-          </span>
+        <section className="relative w-full  h-[500px] md:h-[300px] lg:h-[550px]  mt-16  flex flex-col items-center text-center text-white mb-20">
+          <h2 className="px-4 text-gray-800 uppercase text-lg font-bold tracking-widest">
+            Patrocinados pela Nettracker
+          </h2>
+          <div className="w-[90%] md:w-[80%]">
+            <CarouselNuka
+              renderCenterLeftControls={({ previousSlide }) => (
+                <CustomPrevButton previousSlide={previousSlide} />
+              )}
+              renderCenterRightControls={({ nextSlide }) => (
+                <CustomNextButton nextSlide={nextSlide} />
+              )}
+              cellSpacing={10}
+              slidesToShow={screen.width < 768 ? 1 : 2}
+            >
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/sponsers/img1.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/sponsers/img2.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/sponsers/img3.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/sponsers/img4.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%]  h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/sponsers/img5.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+            </CarouselNuka>
+          </div>
         </section>
 
         <hr className="h-[2px] w-full bg-gray-200 md:hidden mt-24" />

@@ -1,8 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, ReactNode } from "react";
 import CarouselNuka from "nuka-carousel/lib/carousel";
 import Link from "next/link";
 import Image from "next/image";
-import { BsWhatsapp } from "react-icons/bs";
+import {
+  BsChevronLeft,
+  BsChevronRight,
+  BsWhatsapp,
+} from "react-icons/bs";
 import { useResponsive } from "../contexts/ResponsiveContext";
 import { products } from "../utils/dataProducts";
 
@@ -16,6 +20,22 @@ export function SectionProducts() {
     }
   }, []);
 
+  function CustomPrevButton(props) {
+    return (
+      <button className="ml-7" onClick={props.previousSlide}>
+        <BsChevronLeft color="#fff" size={38} />
+      </button>
+    );
+  }
+
+  function CustomNextButton(props) {
+    return (
+      <button className="mr-7"  onClick={props.nextSlide}>
+        <BsChevronRight color="#fff" size={38} />
+      </button>
+    );
+  }
+
   return (
     <section className="linear-gradient-background-2 products-scroll w-full text-center py-8">
       <div className="text-center mb-8">
@@ -26,7 +46,15 @@ export function SectionProducts() {
           Confira nossos produtos mais vendidos!
         </span>
       </div>
-      <CarouselNuka slidesToShow={screen.width < 768 ? 1 : 3}>
+      <CarouselNuka
+        renderCenterLeftControls={({ previousSlide }) => (
+          <CustomPrevButton previousSlide={previousSlide} />
+        )}
+        renderCenterRightControls={({ nextSlide }) => (
+          <CustomNextButton nextSlide={nextSlide} />
+        )}
+        slidesToShow={screen.width < 768 ? 1 : 3}
+      >
         {products.map((item, index) => (
           <div key={index} className="products-item mx-8 md:mx-4 text-center">
             <div className="relative w-[200px] h-[200px] overflow-visible">
