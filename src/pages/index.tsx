@@ -208,7 +208,7 @@ const Home = () => {
         {/* SPONSORS */}
         <section className="relative w-full  h-[500px] md:h-[300px] lg:h-[550px]  mt-16  flex flex-col items-center text-center text-white mb-20">
           <h2 className="px-4 text-gray-800 uppercase text-lg font-bold tracking-widest">
-            Patrocinados pela Nettracker
+            Patrocinadora oficial de motovelocidade
           </h2>
           <div className="w-[90%] md:w-[80%]">
             <CarouselNuka
@@ -240,22 +240,6 @@ const Home = () => {
               <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
                 <Image
                   src="/sponsers/img3.webp"
-                  objectFit="cover"
-                  layout="fill"
-                  alt="teste"
-                />
-              </div>
-              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
-                <Image
-                  src="/sponsers/img4.webp"
-                  objectFit="cover"
-                  layout="fill"
-                  alt="teste"
-                />
-              </div>
-              <div className="relative w-[100%]  h-[400px] md:h-[500px] my-16 shadow-xl">
-                <Image
-                  src="/sponsers/img5.webp"
                   objectFit="cover"
                   layout="fill"
                   alt="teste"
