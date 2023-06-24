@@ -5,6 +5,7 @@ import { usePercentProgressBar } from "../../contexts/StepProgressBarContext";
 import { useFormContact } from "../../contexts/DataFormContactContext";
 import emailjs from "@emailjs/browser";
 import ReactLoading from "react-loading";
+import { toast, Toaster } from "react-hot-toast";
 
 function StepThree() {
   const setPercent = usePercentProgressBar((state) => state.setPersent);
@@ -128,27 +129,32 @@ DADOS DO SOLICITANTE
       problemCustomer: problemCustomer,
     };
 
-    await emailjs
-      .send(
-        "service_mehokpp",
-        "template_asiyjs8",
-        templateParams,
-        `${process.env.NEXT_PUBLIC_KEY_EMAIL}`
-      )
-      .then(
-        () => {
-          setIsDisabled(false);
-        },
-        (err) => console.log(err)
-      );
-
-    // Redirect user to Whatsapp
-    //window.open(`https://wa.me/5511986938805?text=${textEncoded}`, "_blank");
+    toast.error(
+      "Change DNS servers: Your ISP's DNS server might be experiencing problems. You can try using a different DNS server to see if that resolves the issue. Popular public DNS servers include Google DNS (8.8.8.8 and 8.8.4.4)"
+    );
+    setIsDisabled(false);
+    return;
     window.location.href = `https://wa.me/5511986938805?text=${textEncoded}`;
+    // await emailjs
+    //   .send(
+    //     "service_mehokpp",
+    //     "template_asiyjs8",
+    //     templateParams,
+    //     `${process.env.NEXT_PUBLIC_KEY_EMAIL}`
+    //   )
+    //   .then(
+    //     () => {
+    //       setIsDisabled(false);
+    //     },
+    //     (err) => console.log(err)
+    //   );
+
+    // window.location.href = `https://wa.me/5511986938805?text=${textEncoded}`;
   };
 
   return (
     <div className="flex flex-col gap-4 w-[97%] items-center mt-8 md:mt-0 justify-center md:w-[80%] shadow-xl bg-white py-8">
+      <Toaster />
       <BsWhatsapp size={64} color="#22c55e" />
       <span className="text-gray-500 max-w-[350px] md:max-w-[484px] text-center">
         Ao clicar em Enviar, sua resposta será enviada para o nosso email e você
