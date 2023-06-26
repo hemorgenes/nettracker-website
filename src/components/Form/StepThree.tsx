@@ -129,27 +129,21 @@ DADOS DO SOLICITANTE
       problemCustomer: problemCustomer,
     };
 
-    toast.error(
-      "Change DNS servers: Your ISP's DNS server might be experiencing problems. You can try using a different DNS server to see if that resolves the issue. Popular public DNS servers include Google DNS (8.8.8.8 and 8.8.4.4)"
-    );
-    setIsDisabled(false);
-    return;
-    window.location.href = `https://wa.me/5511986938805?text=${textEncoded}`;
-    // await emailjs
-    //   .send(
-    //     "service_mehokpp",
-    //     "template_asiyjs8",
-    //     templateParams,
-    //     `${process.env.NEXT_PUBLIC_KEY_EMAIL}`
-    //   )
-    //   .then(
-    //     () => {
-    //       setIsDisabled(false);
-    //     },
-    //     (err) => console.log(err)
-    //   );
+    await emailjs
+      .send(
+        "service_mehokpp",
+        "template_asiyjs8",
+        templateParams,
+        `${process.env.NEXT_PUBLIC_KEY_EMAIL}`
+      )
+      .then(
+        () => {
+          setIsDisabled(false);
+        },
+        (err) => console.log(err)
+      );
 
-    // window.location.href = `https://wa.me/5511986938805?text=${textEncoded}`;
+    window.location.href = `https://wa.me/5511986938805?text=${textEncoded}`;
   };
 
   return (
