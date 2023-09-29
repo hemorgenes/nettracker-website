@@ -87,12 +87,17 @@ const Home = () => {
             autoPlay
             loop
             muted
-            className="w-full absolute top-0 left-0 h-full object-cover"
+            className="w-full absolute hidden md:block top-0 left-0 h-full object-cover"
           >
             <source src="/video1.mp4" type="video/mp4" />
             {/* Adicione outras sources para formatos diferentes, se necessário */}
             Seu navegador não suporta vídeos HTML5.
           </video>
+                  
+                  <div className="bg-black absolute h-full w-full top-0 left-0 md:hidden">
+          <img className="md:hidden w-full h-full object-cover bg-black opacity-50" src="/filial/img5.webp" alt="Background Nettracker" />
+
+                  </div>
           <div className="z-10 text-gray-50 text-center">
             <h1 className="font-semibold text-3xl tracking-widest">
               NETTRACKER
@@ -168,7 +173,7 @@ const Home = () => {
         </section>
 
         {/* SPONSORS */}
-        <section className="relative w-full  h-[500px] md:h-[300px] lg:h-[550px]  mt-16  flex flex-col items-center text-center text-white mb-20">
+        <section className="relative w-full  h-[500px] md:h-[300px] lg:h-[550px]  mt-16  flex flex-col items-center text-center text-white mb-32 md:mb-20">
           <h2 className="px-4 text-gray-800 uppercase text-lg font-bold tracking-widest">
             O MAIS MODERNO CENTRO TÉCNICO DE RASTREADORES DE CAMPINAS E REGIãO.
           </h2>
