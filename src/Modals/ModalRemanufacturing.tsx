@@ -9,7 +9,7 @@ function ModalRemanufacturing() {
     <div>
       <button
         onClick={() => setVisible(true)}
-        className="w-full md:w-fit px-20 py-3 mt-4 text-center bg-zinc-800 hover:bg-zinc-900 text-gray-50 transition-colors"
+        className="w-full md:w-fit px-20 py-3 mt-4 text-center linear-gradient-background text-gray-50 transition-colors"
       >
         SAIBA MAIS
       </button>

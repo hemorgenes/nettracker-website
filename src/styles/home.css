@@ -81,11 +81,11 @@
 
 
 .linear-gradient-background {
-  background: linear-gradient(313.2deg, #1a1a1a -1.02%, #383838 102.53%);
+  background: linear-gradient(313.2deg, #000000 -1.02%, #5d5d5d 102.53%);
 }
 
 .linear-gradient-background-2{
-  background: linear-gradient(180deg, #363636 0%, #1a1a1a 100%);
+  background: linear-gradient(180deg, #5d5d5d 0%, #000000 100%);
 
 }
 
@@ -97,7 +97,7 @@
 
 
 .products-item {
-  background: linear-gradient(180deg, #363636 0%, #1a1a1a 100%);
+  background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
   box-shadow: 0px -27px 80px rgba(0, 0, 0, 0.07), 0px -13.5132px 40.0391px rgba(0, 0, 0, 0.0532233), 0px -8.13971px 24.1177px rgba(0, 0, 0, 0.0456112), 0px -5.21635px 15.4559px rgba(0, 0, 0, 0.0399626), 0px -3.38082px 10.0172px rgba(0, 0, 0, 0.035), 0px -2.12819px 6.30574px rgba(0, 0, 0, 0.0300374), 0px -1.22278px 3.62304px rgba(0, 0, 0, 0.0243888), 0px -0.538175px 1.59459px rgba(0, 0, 0, 0.0167767);
   display: flex;
   flex-direction: column;

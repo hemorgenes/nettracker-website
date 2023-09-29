@@ -55,7 +55,7 @@ export default function Header() {
               offset={-70}
               duration={500}
             >
-              <li className="py-2 px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
+              <li className="py-2 text-sm font-light tracking-wider px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
                 Inicio
               </li>
             </Link>
@@ -68,7 +68,7 @@ export default function Header() {
               smooth={true}
               duration={500}
             >
-              <li className="py-2 px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
+              <li className="py-2 text-sm font-light tracking-wider px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
                 Sobre nós
               </li>
             </Link>
@@ -81,7 +81,7 @@ export default function Header() {
               smooth={true}
               duration={500}
             >
-              <li className="py-2 px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
+              <li className="py-2 text-sm font-light tracking-wider px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
                 Serviços
               </li>
             </Link>
@@ -94,21 +94,21 @@ export default function Header() {
               offset={-70}
               duration={500}
             >
-              <li className="py-2 px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
+              <li className="py-2 text-sm font-light tracking-wider px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
                 Produtos
               </li>
             </Link>
 
             {/* CONTACT */}
             <LinkNext href="/contact">
-              <li className="py-2 px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
+              <li className="py-2 text-sm font-light tracking-wider px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
                 Agendamento
               </li>
             </LinkNext>
             <LinkNext href="https://rastreame.com.br/#/nettracker">
               <a target="_blank">
                 <li
-                  className={`py-2 px-3 rounded hover:bg-opacity-90 ${
+                  className={`py-2 px-3 text-sm rounded-full hover:bg-opacity-90 ${
                     hasScroll ? "bg-black text-white" : "bg-white text-black"
                   } transition-colors`}
                 >

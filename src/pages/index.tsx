@@ -70,7 +70,7 @@ const Home = () => {
 
         {/* INTRODUCTION */}
         <section className="w-full h-screen overflow-hidden flex items-center justify-center">
-          <Image
+          {/* <Image
             placeholder="blur"
             blurDataURL="/background.webp"
             className="absolute top-0 left-0"
@@ -82,10 +82,22 @@ const Home = () => {
                 : "/background-mobile.webp"
             }
             alt="Foto de fundo Nettracker"
-          />
+          /> */}
+          <video
+            autoPlay
+            loop
+            muted
+            className="w-full absolute top-0 left-0 h-full object-cover"
+          >
+            <source src="/video1.mp4" type="video/mp4" />
+            {/* Adicione outras sources para formatos diferentes, se necessário */}
+            Seu navegador não suporta vídeos HTML5.
+          </video>
           <div className="z-10 text-gray-50 text-center">
-            <h1 className="font-bold text-3xl">Nettracker</h1>
-            <span className="block text-gray-300 mt-2 px-4">
+            <h1 className="font-semibold text-3xl tracking-widest">
+              NETTRACKER
+            </h1>
+            <span className="block text-white tracking-wider font-light mt-2 px-4">
               Uma das maiores empresas de rastreadores do Brasil
             </span>
             <Link
@@ -155,6 +167,107 @@ const Home = () => {
           </div>
         </section>
 
+        {/* SPONSORS */}
+        <section className="relative w-full  h-[500px] md:h-[300px] lg:h-[550px]  mt-16  flex flex-col items-center text-center text-white mb-20">
+          <h2 className="px-4 text-gray-800 uppercase text-lg font-bold tracking-widest">
+            O MAIS MODERNO CENTRO TÉCNICO DE RASTREADORES DE CAMPINAS E REGIãO.
+          </h2>
+          <div className="w-[90%] md:w-[80%]">
+            <CarouselNuka
+              renderCenterLeftControls={({ previousSlide }) => (
+                <CustomPrevButton previousSlide={previousSlide} />
+              )}
+              renderCenterRightControls={({ nextSlide }) => (
+                <CustomNextButton nextSlide={nextSlide} />
+              )}
+              cellSpacing={10}
+              slidesToShow={screen.width < 768 ? 1 : 2}
+            >
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/filial/img1.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/filial/img2.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/filial/img3.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/filial/img4.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/filial/img5.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/filial/img6.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/filial/img7.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/filial/img8.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+            </CarouselNuka>
+          </div>
+        </section>
+
+        {/* VIDEO */}
+        <section className="h-[600px] px-4 md:px-32 2xl:px-64 md:py-16 mb-32 md:mb-16">
+          <h2 className="px-4 text-gray-800 uppercase text-center mb-14 text-lg font-bold tracking-widest">
+            O MUNDO DOS RASTREADORES
+          </h2>
+          <video
+            className="w-full h-full object-cover  shadow-2xl"
+            controls
+            autoPlay
+            muted
+          >
+            <source src="/video2.mp4" type="video/mp4" />
+            {/* Adicione outras sources para formatos diferentes, se necessário */}
+            Seu navegador não suporta vídeos HTML5.
+          </video>
+        </section>
+
         {/* SERVICES*/}
         <section className="my-services-scroll w-full lg:px-48">
           <div className="text-center pt-12 pb-4">
@@ -208,8 +321,9 @@ const Home = () => {
         {/* SPONSORS */}
         <section className="relative w-full  h-[500px] md:h-[300px] lg:h-[550px]  mt-16  flex flex-col items-center text-center text-white mb-20">
           <h2 className="px-4 text-gray-800 uppercase text-lg font-bold tracking-widest">
-            Patrocinadora oficial de motovelocidade
+            GALERIA DA FAMA - NOSSOS PATROCINADOS
           </h2>
+          <span className="text-gray-500 tracking-widest">A Nettracker acredita e investe no esporte brasileiro!</span>
           <div className="w-[90%] md:w-[80%]">
             <CarouselNuka
               renderCenterLeftControls={({ previousSlide }) => (
@@ -240,6 +354,38 @@ const Home = () => {
               <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
                 <Image
                   src="/sponsers/img3.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/sponsers/img4.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/sponsers/img5.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/sponsers/img6.webp"
+                  objectFit="cover"
+                  layout="fill"
+                  alt="teste"
+                />
+              </div>
+              <div className="relative w-[100%] h-[400px] md:h-[500px] my-16 shadow-xl">
+                <Image
+                  src="/sponsers/img7.webp"
                   objectFit="cover"
                   layout="fill"
                   alt="teste"

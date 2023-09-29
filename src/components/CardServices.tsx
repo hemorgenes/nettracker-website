@@ -20,7 +20,7 @@ export function CardLeft({
     <article
       className={`${lastItem} flex flex-col md:flex-row justify-between 2xl:justify-center items-center mt-16 mb-16 md:mb-32`}
     >
-      <div className="relative w-[85%] md:w-[460px] h-[190px] md:h-[272px] md:mr-10 -mt-8">
+      <div className="relative shadow-2xl w-[85%] md:w-[460px] h-[190px] md:h-[272px] md:mr-10 -mt-8">
         <Image
           className="z-20"
           src={image}
@@ -53,7 +53,7 @@ export function CardRight({ title, description, image, children }: CardProps) {
         {children}
       </div>
 
-      <div className="relative w-[85%] md:w-[460px]  h-[190px] md:h-[272px] md:ml-10 -mt-8 order-first md:order-last">
+      <div className="relative shadow-2xl w-[85%] md:w-[460px]  h-[190px] md:h-[272px] md:ml-10 -mt-8 order-first md:order-last">
         <Image
           className="z-20"
           src={image}

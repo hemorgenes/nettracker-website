@@ -42,7 +42,7 @@ export function SectionProducts() {
         <h2 className="text-2xl font-semibold mb-1 text-white">
           Nossos produtos
         </h2>
-        <span className="block text-gray-400 font-regular px-8">
+        <span className="block text-gray-300 font-regular px-8">
           Confira nossos produtos mais vendidos!
         </span>
       </div>
@@ -57,9 +57,10 @@ export function SectionProducts() {
       >
         {products.map((item, index) => (
           <div key={index} className="products-item mx-8 md:mx-4 text-center">
-            <div className="relative w-[200px] h-[200px] overflow-visible">
+            <div className="relative mt-4 w-[200px] h-[200px] overflow-visible">
               <Image
                 objectFit="cover"
+                className="rounded-md"
                 width={200}
                 height={200}
                 style={{
@@ -69,7 +70,7 @@ export function SectionProducts() {
                 alt={item.title}
               />
             </div>
-            <span className="text-white pb-8 mt-2">{item.title}</span>
+            <span className="text-white font-light pb-8 mt-2">{item.title}</span>
           </div>
         ))}
       </CarouselNuka>

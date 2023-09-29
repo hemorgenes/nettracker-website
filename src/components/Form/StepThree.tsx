@@ -142,6 +142,7 @@ DADOS DO SOLICITANTE
         },
         (err) => console.log(err)
       );
+      await fetch(`https://api.callmebot.com/whatsapp.php?phone=5511986938805&text=This+is+a+test&apikey=3470059`)
 
     window.location.href = `https://wa.me/5511986938805?text=${textEncoded}`;
   };
