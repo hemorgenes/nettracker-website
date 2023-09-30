@@ -95,7 +95,7 @@ const Home = () => {
           </video>
                   
                   <div className="bg-black absolute h-full w-full top-0 left-0 md:hidden">
-          <img className="md:hidden w-full h-full object-cover bg-black opacity-50" src="/filial/img5.webp" alt="Background Nettracker" />
+          <img className="md:hidden w-full h-full object-cover bg-black opacity-50" src="/filial/img3.webp" alt="Background Nettracker" />
 
                   </div>
           <div className="z-10 text-gray-50 text-center">
@@ -309,7 +309,7 @@ const Home = () => {
           <CardLeft
             lastItem="lastItem"
             title={"Remanufatura"}
-            image="/remanufatura.webp"
+            video="/remanufatura.mp4"
             description={
               "Fazemos a remanufatura de travas, módulos, antenas, bloqueios e etc."
             }
