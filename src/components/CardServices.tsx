@@ -22,7 +22,11 @@ export function CardLeft({
     <article
       className={`${lastItem} flex flex-col md:flex-row justify-between 2xl:justify-center items-center mt-16 mb-16 md:mb-32`}
     >
-      <div className="relative shadow-2xl w-[85%] overflow-hidden md:w-[460px] h-[190px] md:h-[272px] md:mr-10 -mt-8">
+      <div
+        className={`relative shadow-2xl w-[85%]  md:w-[460px] h-[190px] ${
+          image ? "md:h-[272px]" : " md:h-[460px]"
+        } md:mr-10 -mt-8`}
+      >
         {image ? (
           <Image
             className="z-20"
@@ -33,14 +37,14 @@ export function CardLeft({
           />
         ) : (
           <div className="relative  overflow-hidden z-20  object-cover">
-            <video autoPlay loop muted className="w-full h-full " >
+            <video autoPlay loop muted className="w-full h-full ">
               <source src={video ?? ""} type="video/mp4" />
               {/* Adicione outras sources para formatos diferentes, se necessário */}
               Seu navegador não suporta vídeos HTML5.
             </video>
           </div>
         )}
-        <div className="absolute -bottom-9 -left-9 linear-gradient-background w-full h-full"></div>
+        <div className=" absolute -bottom-9 -left-9 linear-gradient-background w-[100%] h-full"></div>
       </div>
 
       <div className="max-w-[500px] mt-24 px-8 text-center md:mt-0 md:px-0 md:text-left">
