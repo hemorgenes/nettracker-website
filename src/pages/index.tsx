@@ -31,6 +31,7 @@ import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
+import AppNettracker from "../components/App";
 
 const Home = () => {
   const setScreen = useResponsive((state) => state.setScreen);
@@ -93,11 +94,14 @@ const Home = () => {
             {/* Adicione outras sources para formatos diferentes, se necessário */}
             Seu navegador não suporta vídeos HTML5.
           </video>
-                  
-                  <div className="bg-black absolute h-full w-full top-0 left-0 md:hidden">
-          <img className="md:hidden w-full h-full object-cover bg-black opacity-50" src="/filial/img3.webp" alt="Background Nettracker" />
 
-                  </div>
+          <div className="bg-black absolute h-full w-full top-0 left-0 md:hidden">
+            <img
+              className="md:hidden w-full h-full object-cover bg-black opacity-50"
+              src="/filial/img3.webp"
+              alt="Background Nettracker"
+            />
+          </div>
           <div className="z-10 text-gray-50 text-center">
             <h1 className="font-semibold text-3xl tracking-widest">
               NETTRACKER
@@ -171,6 +175,8 @@ const Home = () => {
             <ModalAboutMemo />
           </div>
         </section>
+
+        <AppNettracker />
 
         {/* SPONSORS */}
         <section className="relative w-full  h-[500px] md:h-[300px] lg:h-[550px]  mt-16  flex flex-col items-center text-center text-white mb-32 md:mb-20">
@@ -328,7 +334,9 @@ const Home = () => {
           <h2 className="px-4 text-gray-800 uppercase text-lg font-bold tracking-widest">
             GALERIA DA FAMA - NOSSOS PATROCINADOS
           </h2>
-          <span className="text-gray-500 tracking-widest">A Nettracker acredita e investe no esporte brasileiro!</span>
+          <span className="text-gray-500 tracking-widest">
+            A Nettracker acredita e investe no esporte brasileiro!
+          </span>
           <div className="w-[90%] md:w-[80%]">
             <CarouselNuka
               renderCenterLeftControls={({ previousSlide }) => (
