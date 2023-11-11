@@ -141,12 +141,7 @@ DADOS DO SOLICITANTE
         () => {
           setIsLoading(false);
           setIsDisabled(true);
-          toast.success(
-            "Recebemos sua solicitação! Você receberá um e-mail de confirmação",
-            {
-              duration: 4000,
-            }
-          );
+         
         },
         (err) => {
           setIsLoading(false);
@@ -160,6 +155,12 @@ DADOS DO SOLICITANTE
     } catch (err) {
       console.log(err);
     }
+    toast.success(
+      "Recebemos sua solicitação! Você receberá um e-mail de confirmação",
+      {
+        duration: 4000,
+      }
+    );
 
     setTimeout(() => {
       window.location.href = `https://nettracker.com.br`;
