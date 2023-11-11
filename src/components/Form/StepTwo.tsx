@@ -208,7 +208,7 @@ function StepTwo() {
                   ? "Escolha o tipo de veículo"
                   : vehicleType.type}
               </option>
-              {vehicles.map((vehicle) => (
+              {vehicles?.map((vehicle) => (
                 <option key={vehicle.slug} value={vehicle.slug}>
                   {vehicle.type}
                 </option>
@@ -234,7 +234,7 @@ function StepTwo() {
                   ? "Escolha uma marca"
                   : brandVehicle.nome}
               </option>
-              {brands.map((brand) => (
+              {brands?.map((brand) => (
                 <option key={brand.codigo} value={brand.codigo}>
                   {brand.nome}
                 </option>
@@ -255,7 +255,7 @@ function StepTwo() {
               <option value="" hidden>
                 {modelVehicle == undefined ? "Escolha o modelo" : modelVehicle}
               </option>
-              {models.map((model) => (
+              {models?.map((model) => (
                 <option key={model.codigo} value={model.nome}>
                   {model.nome}
                 </option>

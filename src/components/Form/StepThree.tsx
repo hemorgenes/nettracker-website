@@ -10,6 +10,7 @@ import { toast, Toaster } from "react-hot-toast";
 function StepThree() {
   const setPercent = usePercentProgressBar((state) => state.setPersent);
   const [isDisabled, setIsDisabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const date = useFormContact((state) => state.date);
   const nameCompany = useFormContact((state) => state.nameCompany);
@@ -44,7 +45,7 @@ function StepThree() {
 
   const handleSendMessage = async () => {
     //After verify if all texts no are empty, convert date USA to Date BR
-    setIsDisabled(true);
+    setIsLoading(true);
     const data_brasileira = date.split("-").reverse().join("/");
 
     if (vehicleType?.slug !== "caminhoes") {
@@ -138,13 +139,30 @@ DADOS DO SOLICITANTE
       )
       .then(
         () => {
-          setIsDisabled(false);
+          setIsLoading(false);
+          setIsDisabled(true);
         },
-        (err) => console.log(err)
+        (err) => {
+          setIsLoading(false);
+          console.log(err);
+        }
       );
-      await fetch(`https://api.callmebot.com/whatsapp.php?phone=5511986938805&text=This+is+a+test&apikey=3470059`)
-
-    window.location.href = `https://wa.me/5511986938805?text=${textEncoded}`;
+    try {
+      await fetch(
+        `https://api.callmebot.com/whatsapp.php?phone=5511986938805&text=This+is+a+test&apikey=3470059`
+      );
+    } catch (err) {
+      console.log(err);
+    }
+    toast.success(
+      "Recebemos sua solicitação! Você receberá um e-mail de confirmação",
+      {
+        duration: 4000,
+      }
+    );
+    setTimeout(() => {
+      window.location.href = `https://nettracker.com.br`;
+    }, 4000);
   };
 
   return (
@@ -168,12 +186,12 @@ DADOS DO SOLICITANTE
           <span>VOLTAR</span>
         </button>
         <button
-          disabled={isDisabled}
+          disabled={isDisabled || isLoading}
           onClick={handleSendMessage}
           className="inline-flex disabled:placeholder-opacity-90 disabled:cursor-not-allowed gap-2 w-full md:w-fit justify-center mx-auto md:mx-0 border-solid border-green-500 bg-green-500 hover:bg-green-600 hover:border-green-600 transition-colors text-white px-10 md:px-14 py-4 rounded-sm"
           type="submit"
         >
-          {isDisabled ? (
+          {isLoading ? (
             <ReactLoading
               type="spinningBubbles"
               color="#fff"
