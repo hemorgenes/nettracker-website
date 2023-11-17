@@ -112,7 +112,7 @@ export default function Header() {
                     hasScroll ? "bg-black text-white" : "bg-white text-black"
                   } transition-colors`}
                 >
-                  Login
+                  Área do Cliente
                 </li>
               </a>
             </LinkNext>
@@ -213,7 +213,7 @@ export default function Header() {
                 <LinkNext href="http://appnettracker.com.br">
                   <a target="_blank">
                     <li className="py-4 px-8 w-full rounded text-left">
-                      Login
+                      Área do Cliente
                     </li>
                   </a>
                 </LinkNext>
