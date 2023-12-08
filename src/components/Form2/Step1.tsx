@@ -23,7 +23,7 @@ export default function Step1({ setStep }: Step1Props) {
     setIsLoading(true);
     try {
       let plate = placa.replace(/[^\w\s]/gi, "");
-      const response: any = await fetch(`https://backend-placa-ebsyziane-kauan777.vercel.app/${plate}`);
+      const response: any = await fetch(`https://backend-placa.vercel.app/${plate}`);
       const data: ResponsePlaca = await response.json();
       const emptyArr = [];
       const ALREADY_EXISTS = currentScheduling?.vehicles?.find(
