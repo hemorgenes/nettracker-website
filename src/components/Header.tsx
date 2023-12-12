@@ -100,7 +100,7 @@ export default function Header() {
             </Link>
 
             {/* CONTACT */}
-            <LinkNext href="/contact">
+            <LinkNext href="/agendamento">
               <li className="py-2 text-sm font-light tracking-wider px-3 rounded hover:bg-opacity-20 hover:bg-black transition-colors">
                 Agendamento
               </li>
@@ -205,7 +205,7 @@ export default function Header() {
                   </li>
                 </Link>
                 {/* CONTACT */}
-                <LinkNext href="/contact">
+                <LinkNext href="/agendamento">
                   <li className="py-4 px-8 w-full rounded text-left">
                     Agendamento
                   </li>
