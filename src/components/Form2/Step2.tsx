@@ -119,12 +119,12 @@ export default function Step2({ setStep }: Step2Props) {
     const customVehicles = currentScheduling?.vehicles
       .map(
         (vehicle) => `
-        Tipo: ${vehicle?.vehicle_type}
-        Marca: ${vehicle?.brand_vehicle}
-        Modelo: ${vehicle?.model_vehicle}
-        Placa: ${vehicle?.plate_vehicle}
-        Cor: ${vehicle?.color_vehicle}
-        Ano: ${vehicle?.year_vehicle}
+        Tipo: ${vehicle?.vehicle_type ?? "NÃO ECONTRADO"}
+        Marca: ${vehicle?.brand_vehicle ?? "NÃO ECONTRADO"}
+        Modelo: ${vehicle?.model_vehicle ?? "NÃO ECONTRADO"}
+        Placa: ${vehicle?.plate_vehicle ?? "NÃO ECONTRADO"}
+        Cor: ${vehicle?.color_vehicle ?? "NÃO ECONTRADO"}
+        Ano: ${vehicle?.year_vehicle ?? "NÃO ECONTRADO"}
   
         --------------------------------------------
     `

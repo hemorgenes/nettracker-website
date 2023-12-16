@@ -1,11 +1,11 @@
 import create from "zustand";
 
 export interface Veichle {
-  vehicle_type: string;
-  brand_vehicle: string;
-  model_vehicle: string;
-  plate_vehicle: string;
-  color_vehicle: string;
+  vehicle_type?: string;
+  brand_vehicle?: string;
+  model_vehicle?: string;
+  plate_vehicle?: string;
+  color_vehicle?: string;
   year_vehicle: string;
   has_carret?: string;
 }

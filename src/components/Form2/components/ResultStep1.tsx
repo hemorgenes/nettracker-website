@@ -23,10 +23,10 @@ export default function ResultStep1({ setStep }: Step1Props) {
   const { currentScheduling, setCurrentScheduling } = useForm();
   const [address, setAddress] = useState(currentScheduling?.address);
   const [escortInLocal, setEscortInLocal] = useState<string>(
-    currentScheduling?.escort_in_local || ""
+    currentScheduling?.escort_in_local || "Não"
   );
   const [vehicleIsBlocked, setVehicleIsBlocked] = useState<string>(
-    currentScheduling?.veichle_blocked ?? ""
+    currentScheduling?.veichle_blocked ?? "Não"
   );
   const [city, setCity] = useState(currentScheduling?.city);
   const [states, setStates] = useState<State[]>([]);

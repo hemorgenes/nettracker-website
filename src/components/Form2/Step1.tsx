@@ -23,7 +23,9 @@ export default function Step1({ setStep }: Step1Props) {
     setIsLoading(true);
     try {
       let plate = placa.replace(/[^\w\s]/gi, "");
-      const response: any = await fetch(`https://backend-placa.vercel.app/${plate}`);
+      const response: any = await fetch(
+        `https://backend-placa.vercel.app/${plate}`
+      );
       const data: ResponsePlaca = await response.json();
       const emptyArr = [];
       const ALREADY_EXISTS = currentScheduling?.vehicles?.find(
@@ -53,11 +55,11 @@ export default function Step1({ setStep }: Step1Props) {
           ...(currentScheduling?.vehicles ?? emptyArr),
           {
             vehicle_type: data.extra.tipo_veiculo,
-            brand_vehicle: data.MARCA,
-            year_vehicle: data.ano,
-            model_vehicle: data.MODELO,
-            color_vehicle: data.cor,
-            plate_vehicle: data.placa,
+            brand_vehicle: data.MARCA ?? "NÃO ECONTRADO",
+            year_vehicle: data.ano ?? "NÃO ECONTRADO",
+            model_vehicle: data.MODELO ?? "NÃO ECONTRADO",
+            color_vehicle: data.cor ?? "NÃO ECONTRADO",
+            plate_vehicle: data.placa ?? "NÃO ECONTRADO",
           },
         ],
       });
