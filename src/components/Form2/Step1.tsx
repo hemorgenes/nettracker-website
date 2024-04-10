@@ -27,12 +27,11 @@ export default function Step1({ setStep }: Step1Props) {
         `https://backend-placa.vercel.app/${plate}`
       );
       const data: ResponsePlaca = await response.json();
-      const emptyArr = [];
       const ALREADY_EXISTS = currentScheduling?.vehicles?.find(
         (vehicle) => vehicle.plate_vehicle === data.placa
       );
       if (ALREADY_EXISTS) {
-        toast.error("Veículo ja adicionado");
+        toast.error("Veículo já foi adicionado");
         return;
       }
       setCurrentScheduling({
@@ -52,9 +51,9 @@ export default function Step1({ setStep }: Step1Props) {
           veichle_blocked: "",
         }),
         vehicles: [
-          ...(currentScheduling?.vehicles ?? emptyArr),
+          ...(currentScheduling?.vehicles ?? []),
           {
-            vehicle_type: data.extra.tipo_veiculo,
+            vehicle_type: data?.extra ? data.extra.tipo_veiculo : data.segmento,
             brand_vehicle: data.MARCA ?? "NÃO ECONTRADO",
             year_vehicle: data.ano ?? "NÃO ECONTRADO",
             model_vehicle: data.MODELO ?? "NÃO ECONTRADO",
