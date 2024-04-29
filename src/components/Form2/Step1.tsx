@@ -53,7 +53,7 @@ export default function Step1({ setStep }: Step1Props) {
         vehicles: [
           ...(currentScheduling?.vehicles ?? []),
           {
-            vehicle_type: data?.extra ? data.extra.tipo_veiculo : data.segmento,
+            vehicle_type: data?.extra?.tipo_veiculo ?? data.segmento,
             brand_vehicle: data.MARCA ?? "NÃO ECONTRADO",
             year_vehicle: data.ano ?? "NÃO ECONTRADO",
             model_vehicle: data.MODELO ?? "NÃO ECONTRADO",
