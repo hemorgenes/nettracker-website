@@ -44,7 +44,7 @@ export default function ItemVehicle({ vehicle }: ItemVehicleProps) {
           </dt>
 
           <button
-            onClick={() => removeVehicle(vehicle.plate_vehicle)}
+            onClick={() => removeVehicle(String(vehicle?.plate_vehicle))}
             className="w-full border-1 mt-6 border-red-600 py-2 text-red-600 underline flex items-center justify-center"
           >
             Remover
